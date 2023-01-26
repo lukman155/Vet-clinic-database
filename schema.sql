@@ -5,8 +5,8 @@
 
 CREATE TABLE animals (
     id INT, 
-    name CHAR, 
+    name CHAR(24), 
     date_of_birth DATE, 
     escape_attempts INT, 
-    neutered BIT, 
+    neutered BOOLEAN, 
     weight_kg REAL)
