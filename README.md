@@ -20,6 +20,9 @@
 
 ## 🛠 Built With <a name="built-with"></a>
 
+VS Code
+CMD
+
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
