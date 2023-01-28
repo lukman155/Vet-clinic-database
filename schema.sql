@@ -39,3 +39,28 @@ ALTER TABLE animals ADD FOREIGN KEY (species_ID) REFERENCES species(id);
 
 ALTER TABLE animals ADD COLUMN owners_ID INT;
 ALTER TABLE animals ADD FOREIGN KEY (owners_ID) REFERENCES owners(id);
+
+
+/*Create vets table*/
+
+CREATE TABLE vets (
+    id INT GENERATED ALWAYS AS IDENTITY, 
+    name CHAR(75), age INT, 
+    date_of_graduation DATE, 
+    PRIMARY KEY(id)
+);
+
+/*Create table specializations */
+
+CREATE TABLE specializations (
+    vets_id INT REFERENCES vets(id) , 
+    species_id INT REFERENCES species(id), 
+);
+
+/*Create a "join table" called visits*/
+
+CREATE TABLE visits (
+    animals_id INT REFERENCES animals(id), 
+    vets_id INT REFERENCES vets(id),
+    date_of_visits DATE, 
+);
