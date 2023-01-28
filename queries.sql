@@ -14,12 +14,14 @@ SELECT * FROM animals WHERE neutered = 't';
  BEGIN;
  UPDATE animals SET species = 'unspecified';
  ROLLBACK;
+ SELECT species from animals;
 
 /* Add species data as transaction */
 BEGIN;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon%';
 UPDATE animals SET species='pokemon' WHERE species IS NULL;
 COMMIT;
+SELECT species from animals;
 
 /* Delete table and rollback */
 BEGIN;
